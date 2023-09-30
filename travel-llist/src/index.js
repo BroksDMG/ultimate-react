@@ -6,13 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import Counter from "./Counter";
 import TravelApp from "./trawel_list_exercise/TravelApp";
 import AccordianTask from "./accordianTask/AccordianTask";
+import TipCalculator from "./tipCalculator/TipCalculator";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Counter /> */}
     {/* <TravelApp /> */}
-    <AccordianTask />
+    {/* <AccordianTask /> */}
+    <TipCalculator />
   </React.StrictMode>
 );
 
