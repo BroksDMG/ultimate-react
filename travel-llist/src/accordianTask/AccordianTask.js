@@ -25,34 +25,47 @@ export default function App() {
 }
 
 function Accordion() {
-  const [isOpen, setIsOpen] = useState(false);
-  function toggleOpen(id) {
-    faqs.filter((item, itemId) =>
-      id !== itemId ? isOpen : setIsOpen((e) => e)
-    );
-  }
+  const [curOpen, setCurOpen] = useState(null);
 
   return (
     <div className="accordion">
       {faqs.map((item, index) => (
         <AccordionItems
           title={item.title}
-          text={item.text}
           number={index + 1}
-          isOpen={isOpen}
-        />
+          curOpen={curOpen}
+          setCurOpen={setCurOpen}
+        >
+          {item.text}
+        </AccordionItems>
       ))}
+      <AccordionItems
+        title={"Do you ship to countries outside the EU?"}
+        number={23}
+        curOpen={curOpen}
+        setCurOpen={setCurOpen}
+      >
+        Pariatur recusandae dignissimos fuga voluptas unde optio nesciunt
+        commodi beatae, explicabo natus.
+      </AccordionItems>
     </div>
   );
 }
 
-function AccordionItems({ title, text, number, isOpen }) {
+function AccordionItems({ title, number, curOpen, setCurOpen, children }) {
+  const isOpen = number === curOpen;
+  function onClikHandler() {
+    number === curOpen ? setCurOpen(null) : setCurOpen(number);
+  }
   return (
-    <div className={`item ${isOpen ? "open" : ""}`}>
+    <div
+      onClick={() => onClikHandler()}
+      className={`item ${isOpen ? "open" : ""}`}
+    >
       <p className={`number`}>{number.toString().padStart(2, "0")}</p>
       <p className="title">{title}</p>
       <p className="icon">{isOpen ? "-" : "+"}</p>
-      {isOpen && <div className="content-box">{text}</div>}
+      {isOpen && <div className="content-box">{children}</div>}
     </div>
   );
 }
