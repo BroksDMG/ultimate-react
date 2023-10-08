@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background-color: bisque;
+  max-width: max-content;
+  padding: 30px;
+  border-radius: 20px;
+  width: 31rem;
+}
+
+.container p {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container ul li {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  list-style-type: none;
+  font-size: 20px;
+}
+.option,
+.splitButton,
+.container ul li input {
+  font-size: 20px;
+  border-radius: 5px;
+  width: 10rem;
+  border: none;
+  padding: 10px 0px 10px 5px;
+}
+.option,
+.splitButton,
+.container ul li input:active {
+  border: none;
+}
+.splitButton {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: orange;
+}
