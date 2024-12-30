@@ -3,7 +3,7 @@ import Challange1 from "./challanges/Challange1.js";
 function App() {
   return (
     <div>
-      <Challange1 />
+      {/* <Challange1 /> */}
       <PizzaMenu />
     </div>
   );
