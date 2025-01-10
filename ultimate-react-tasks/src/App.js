@@ -1,9 +1,9 @@
 import PizzaMenu from "./projects/PizzaMenu";
-import Challange1 from "./challanges/Challange1.js";
+import Challange1and2 from "./challanges/Challange1and2.js";
 function App() {
   return (
     <div>
-      {/* <Challange1 /> */}
+      {/* <Challange1and2 /> */}
       <PizzaMenu />
     </div>
   );
